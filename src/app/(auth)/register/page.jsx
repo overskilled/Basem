@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
@@ -11,8 +11,10 @@ import { FolderMinus, Loader2, Mail, Phone, User } from 'lucide-react'
 import { auth, firestore } from '@/firebase/config'
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { useRouter } from 'next/navigation'
 
 export default function Component() {
+    const router = useRouter()
     const [formData, setFormData] = useState({
         name: "",
         email: "",

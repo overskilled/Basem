@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Star, ChevronRight, MessageCircle, ShoppingCart } from 'lucide-react'
+import { Star, ChevronRight, MessageCircle, ShoppingCart, Loader2 } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -104,10 +104,8 @@ export default function SupplierPage() {
                                     <p className="text-gray-600 mb-4">T-shirt, electronic, shoes</p>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                         {isLoadingProducts ? (
-                                            <div className="flex justify-center">
-                                                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-                                                    <span className="visually-hidden"></span>
-                                                </div>
+                                            <div className="flex w-full justify-center">
+                                                <Loader2 />
                                             </div>
                                         ) : (
                                             <>
